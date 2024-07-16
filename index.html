@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Election Campaign Signs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script defer src="firebase-config.js"></script>
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div id="map"></div>
+    <div id="sidebar" class="hidden">
+        <button id="closeSidebar">Close</button>
+        <div id="sidebar-content"></div>
+    </div>
+    <div id="formContainer">
+        <button id="toggleFormButton">แชร์ป้ายหาเสียง</button>
+        <form id="campaignForm">
+            <label for="location">ตำแหน่งที่พบป้าย:</label>
+            <input type="text" id="location" name="location" readonly>
+
+            <button id="placeMarkerButton" type="button">ปักหมุดที่พบป้าย</button>
+
+            <label for="candidateName">ชื่อผู้สมัคร:</label>
+            <input type="text" id="candidateName" name="candidateName" required>
+
+            <label for="party">พรรคการเมือง:</label>
+            <input type="text" id="party" name="party" required>
+
+            <label for="policyMessage">ข้อความนโยบาย:</label>
+            <textarea id="policyMessage" name="policyMessage" required></textarea>
+
+            <label for="signImage">รูปภาพป้ายหาเสียง:</label>
+            <input type="file" id="signImage" name="signImage" accept="image/*" required>
+
+            <button type="submit">แชร์</button>
+        </form>
+    </div>
+    <div id="mapHeader">
+        <div id="mapTitle">
+            <h1>แชร์ป้าย</h1>
+            <p>ร่วมแชร์ป้ายหาเสียงของการเลือกตั้งท้องถิ่นในรอบนี้
+                เพื่อพลักดันให้ผู้สมัครที่คุณสนับสนุนได้รับเสียงเพิ่มมากขึ้น
+            </p>
+        </div>
+        <div id="mapLogo">
+            <img src="assets/Asset 12map-icon.png" alt="PI-Logo">
+        </div>
+    </div>
+</body>
+
+</html>
